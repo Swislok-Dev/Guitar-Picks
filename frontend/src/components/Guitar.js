@@ -8,10 +8,10 @@ class Guitar {
 
   // Render all guitars
   renderCard = () => {
-    const { brand, model, image_url, id } = this.data
+    const { brand, model, imageUrl, id } = this.data
     document.getElementById('guitar-container').innerHTML += `
     <div class="guitar-card" data-id=${id}>
-      <img src=${image_url} alt=${brand} ${model}/>
+      <img src=${imageUrl} alt=${brand} ${model}/>
       <p class='guitar-name'>${brand} </p>
       <p>${model}</p>
       <button>View</button>
@@ -21,7 +21,7 @@ class Guitar {
 
   // Render a single guitar
   showGuitar = () => {
-    const { style, brand, model, image_url, id, username, created_at } = this.data
+    const { style, brand, model, imageUrl, id, username, createdAt } = this.data
     const header2 = document.getElementById('header-2')
     header2.innerHTML = `${brand} ${model} <br>
     <button id="back-button">Go Back</button>`
@@ -32,9 +32,9 @@ class Guitar {
 
     document.getElementById('guitar-container').innerHTML = `
     <div class="guitar-card" data-id=${id}>
-      <img src=${image_url} alt=${brand} ${model}/>
+      <img src=${imageUrl} alt=${brand} ${model}/>
       <p>Type: ${style}</p>
-      <p>Posted: ${created_at}</p>
+      <p>Posted: ${createdAt}</p>
       <p>Posted by: ${username}</p>
     </div>
   `
@@ -63,7 +63,7 @@ class Guitar {
       brand: e.target.brand.value,
       model: e.target.model.value,
       style: e.target.style.value,
-      image_url: e.target.image_url.value,
+      imageUrl: e.target.imageUrl.value,
     }
     api.createGuitar(createGuitar).then((post) => new Guitar(post).renderCard())
     modal.close()
@@ -79,8 +79,8 @@ class Guitar {
     <input type="text" name="brand" required><br>
     <label for="model">Model:</label><br>
     <input type="text" name="model" required><br>
-    <label for="image_url">Image URL:</label><br>
-    <input type="text" name="image_url" required></br>
+    <label for="imageUrl">Image URL:</label><br>
+    <input type="text" name="imageUrl" required></br>
     
     <label for="style">Style:</label><br>
     <input type="radio" name="style" value="Electric" required>
