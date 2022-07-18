@@ -1,4 +1,4 @@
-class GuitarSerializerSerializer < ActiveModel::Serializer
+class GuitarSerializer < ActiveModel::Serializer
   attributes :id, :brand, :model, :image_url, :style, :username, :created_at
 
   def username
