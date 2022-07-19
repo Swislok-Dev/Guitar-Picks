@@ -20,10 +20,9 @@ class User {
       <h3>Username: ${user.username}</h3>
       <button id="user-guitars">Show Guitars</button>
     </div>`
-    const userGuitarsBtn = document.querySelector('button#user-guitars')
-    userGuitarsBtn.addEventListener('click', () => {
-      User.showGuitars(user.guitars)
-    })
+    
+    User.showGuitars(user.guitars)
+    
   }
 
   static renderUserGuitar = (guitar) => {
