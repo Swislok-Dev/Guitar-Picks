@@ -73,7 +73,7 @@ class Guitar {
   // Add guitar form
   static openNewProductForm = () => {
     modal.main.innerHTML = `
-    <h2>Post your product</h2>
+    <h2>Post your guitar</h2>
     <form>
     <label for="brand">Brand:</label><br>
     <input type="text" name="brand" required><br>
